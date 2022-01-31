@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {"JetBrains Mono:size=11"};
-static const char dmenufont[]       = "JetBrains Mono:size=11";
+static const char *fonts[]          = {"source code pro:size=12","Iosevka Term:size=20"};
+static const char dmenufont[]       = "JetBrains Mono:size=12";
 static const char col_black[]       = "#070b14";
 static const char col_gray1[]       = "#444444";
 static const char col_gray2[]       = "#bbbbbb";
@@ -19,7 +19,17 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = {
+	"", /* 1 - terminal */
+	"ﭮ", /* 2 - discord, spotify, teamspeak */
+	"", /* 3 - firefox */
+	"", /* 4 - steam, polymc */
+	"", /* 5 - games */
+	"", /* 6 - virtual machines*/
+	"", /* 7 */
+	"", /* 8 */
+	""  /* 9 */
+};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -101,7 +111,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_r,      quit,           {1} },
 };
 
 /* button definitions */
